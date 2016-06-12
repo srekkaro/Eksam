@@ -1,0 +1,25 @@
+﻿
+					<h2>Pildivorm</h2>
+					<form action="?leht=laadipilt" enctype="multipart/form-data" method="POST">
+					<table>
+						<tr>
+							<td><label for="pealkiri">Pildi pealkiri: </label></td>
+							<td><input type="text" id="pealkiri" name="pealkiri" placeholder="Pildi pealkiri"/></td>
+						</tr>
+						<tr>
+							<td><label for="Pilt">Pilt: </label></td>
+							<td><input type="file"  name="pilt" id="Pilt"/></td>
+						</tr>
+					</table>
+					<input type="submit" value="Lisa pilt!"/>
+				</form>
+				</div>
+				<div>	
+					<h2>Tagasi avalehelt</h2>			
+					<a href="?leht=avaleht" class="nupp">Avaleht</a>
+				</div>
+			<?php if (isset($vead)):?>
+					<?php foreach($vead as $viga):?>
+						<div style="color:red;"><?php echo htmlspecialchars($viga); ?></div>
+					<?php endforeach;?>
+			<?php endif;?>

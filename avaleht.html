@@ -3,13 +3,18 @@
 				<h1>Pildi üleslaadimise äpp</h1>		
 				<div>
 					<h2>Statistika</h2>
-					<p>Sessiooni jooksul üleslaetud piltide arv on: <?php echo $failidearv ?></p>
+					<p>Sessiooni jooksul üleslaetud piltide arv on: <?php echo $failidearv; ?></p>
 				</div>
 				<div>
 					<h2>Laadimine</h2>
-					<a href="?leht=alustaSessioon" class="nupp">Alusta sessioon</a><br>				
-					<a href="?leht=laadipilt" class="nupp">Pilti laadima</a><br>
-					<a href="?leht=lopetaSessioon" class="nupp">Lõpeta sessioon</a><br>
+					<?php
+					if (isset($_SESSION)){	?>								
+						<a href="?leht=laadipilt" class="nupp">Pilti laadima</a><br>
+						<a href="?leht=lopetaSessioon" class="nupp">Lõpeta sessioon</a><br>
+					<?php }
+					else { ?>				
+						<a href="?leht=alustaSessioon" class="nupp">Alusta sessioon</a><br>	
+					<?php } ?>
 				</div>
 
 			

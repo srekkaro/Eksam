@@ -14,9 +14,13 @@
 	}
 	
 	function avaleht(){
-			
-		
+		global $connection;
+		$sql="SELECT * FROM srekkaro__eksam";
+		$sql=mysqli_real_escape_string($connection, $sql);
+		$result=mysqli_query($connection, $sql);
+		$failidearv=mysqli_num_rows($result);
 	}
+
 	
 	
 	function laadipilt(){
